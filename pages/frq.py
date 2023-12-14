@@ -16,7 +16,7 @@ question=question_retrieve.choices[0].text
 st.markdown(question)
 
 user_input = st.text_area("Your answer: ",placeholder = "Write your response", key="input")
-prompt="Grade the student's response to " + question + "and score it out of 9 points (award one point for each term that is correctly applied)"
+prompt=user_input + " is the student's full answer. Do not complete the response or add any additional information. Grade the student's response to " + question + "and score it out of 9 points (award one point for each term that is correctly applied). Be very harsh when grading. Do not award pity points. Award points only if the term is explicitly mentioned and contains a meaningful and accurate explanation. Justify your score as well. Your response should begin with the score and the score and explanation should be on separate lines."
 full_str=prompt+question+user_input
 
 if st.button("Submit", type="primary"):
