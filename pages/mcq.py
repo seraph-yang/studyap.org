@@ -12,6 +12,11 @@ topic = st.sidebar.text_input(
     value="AP Psychology",
 )
 
+unit = st.sidebar.text_input(
+    "unit",
+    value="1",
+)
+
 api_key = st.secrets['api_secret']
 
 # Initialize session state variables if they don't exist yet
