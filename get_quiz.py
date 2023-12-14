@@ -33,7 +33,7 @@ def get_quiz_from_topic(topic: str, api_key: str) -> Dict[str, str]:
     chat_history.append(current_user_message)
 
     response = openai.chat.completions.create(
-        model="gpt-3.5-turbo", messages=current_chat
+        model="gpt-4-1106-preview", messages=current_chat
     )
     quiz = response.choices[0].message.content
     current_assistent_message = {"role": "assistant", "content": quiz}
