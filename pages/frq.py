@@ -23,8 +23,8 @@ question=question_retrieve.choices[0].text
 st.markdown(question)
 
 user_input = st.text_area("Your answer: ",placeholder = "Write your response", key="input")
-prompt=['\''+user_input+'\''+" is the student's full answer. Do not complete the response or add any additional information. Grade the student's response to "+'\''+question+'\''+"and score it out of 9 points, awarding points if the term is EXPLICITLY mentioned AND contains an ACCURATE application to the scenario. Grade very harshly and do not award pity points. Explain how every single point was earned and report the final score on a new line.",
-        '\''+user_input+'\''+" is the student's full answer. Do not complete the response or add any additional information. Grade the student's response to "+'\''+question+'\''+"and score it out of 7 points, awarding points if the term is EXPLICITLY mentioned AND contains an ACCURATE answer to the question. Grade very harshly and do not award pity points. Explain how every single point was earned and report the final score on a new line."]
+prompt=['\''+user_input+'\''+" is the student's full answer. Do not complete the response or add any additional information. Grade the student's response to "+'\''+question+'\''+"and score it out of 9 points, awarding points if the term is EXPLICITLY mentioned AND contains an ACCURATE application to the scenario. Grade very harshly and do not award pity points. Purely restating the terms DOES NOT award points. Explain how every single point was earned and report the final score on a new line.",
+        '\''+user_input+'\''+" is the student's full answer. Do not complete the response or add any additional information. Grade the student's response to "+'\''+question+'\''+"and score it out of 7 points, awarding points if the term is EXPLICITLY mentioned AND contains an ACCURATE answer to the question. Grade very harshly and do not award pity points. Purely restating the terms DOES NOT award points. Explain how every single point was earned and report the final score on a new line."]
 full_str=prompt[idx]+question+user_input
 
 if st.button("Submit", type="primary"):
