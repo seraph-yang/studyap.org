@@ -7,14 +7,14 @@ from get_quiz import get_quiz_from_topic
 st.subheader("multiple choice question demo")
 
 # Input box to enter the topic of the quiz
-topic = st.sidebar.text_input(
+topic = st.sidebar.selectbox(
     "course",
-    value="AP Psychology",
+    ('AP Psychology', 'AP Environmental Science', 'AP U.S. History', 'AP Chemistry', 'AP Biology'),
 )
 
-unit = st.sidebar.text_input(
+unit = st.sidebar.selectbox(
     "unit",
-    value="1",
+    ('1', '2', '3', '4', '5', '6', '7', '8', '9'),
 )
 
 api_key = st.secrets['api_secret']
@@ -125,10 +125,3 @@ with col3:
 with col2:
     display_question()
 
-# Add download buttons to sidebar which download current questions
-download_button = st.sidebar.download_button(
-    "Download Quiz Data",
-    data=json.dumps(st.session_state.questions, indent=4),
-    file_name="quiz_session.json",
-    mime="application/json",
-)
