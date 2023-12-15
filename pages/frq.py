@@ -33,7 +33,7 @@ if st.button("Submit", type="primary"):
     report=[]
     for resp in openai.completions.create(model='gpt-3.5-turbo-instruct',
                                             prompt=full_str,
-                                            max_tokens=120, 
+                                            max_tokens=1200, 
                                             temperature = 0.5,
                                             stream = True):
             report.append(resp.choices[0].text)
